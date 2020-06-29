@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct dados { /*deveria estar dentro da main?*/
+struct dados {
             char nome[20];
             int nascD, nascM, nascA;
             char ec[2];
@@ -36,9 +36,9 @@ int main()
         printf(" 2 - Listar dados  \n");
         printf(" 3 - Pesquisar registro pelo nome \n");
         printf(" 4 - Pesquisar registro por estado civil \n");
-        printf(" 5 - Pesquisar registro pelo mês de aniversário \n");
+        printf(" 5 - Pesquisar registro pelo mÃªs de aniversÃ¡rio \n");
         printf(" 6 - Pesquisar registro pela faixa salarial \n");
-        printf(" 7 - Alterar salário  \n");
+        printf(" 7 - Alterar salÃ¡rio  \n");
         printf(" 8 - Alterar dados  \n");
         printf(" 9 - Exclui dados  \n");
         printf(" 10 - Saida\n");
@@ -165,7 +165,7 @@ void inclui(struct dados *ps, int tam) /*1 - ok*/
     fclose(p1);
 }
 
-void lista(struct dados *ps, int tam) /*2 - ok porem não*/
+void lista(struct dados *ps, int tam) /*2 - ok porem nÃ£o*/
 {
     FILE *p, *p1;
     int i;
@@ -294,7 +294,7 @@ int pesquisaMes(struct dados *ps, int tam)/*5 - ok*/
 
     p = fopen("arquivo.txt", "r");
 
-    printf("\nLista de registro com aniversário no mês solicitado:\n");
+    printf("\nLista de registro com aniversÃ¡rio no mÃªs solicitado:\n");
     for(y=0;y<cont;y++)
     {
         fread(ps,tam,1,p);
@@ -392,7 +392,7 @@ void altera(struct dados *ps, int tam) /*8 - ok*/
 
     p = fopen("arquivo.txt", "r+");
 
-    fseek(p,n_bytes,0);   //posioiona o ponteiro do arquivo no registro a ser alterado
+    fseek(p,n_bytes,0);   //posiciona o ponteiro do arquivo no registro a ser alterado
     fread(ps, tam, 1, p );  //le registro do arquivo
 
     do{
@@ -443,7 +443,7 @@ void altera(struct dados *ps, int tam) /*8 - ok*/
     fclose(p);
 }
 
-void exclui(struct dados *ps, int tam) /*9 - NOT OK só lê o primeiro registro*/
+void exclui(struct dados *ps, int tam) /*9 - ok*/
 {
     FILE *p;
     p = fopen("arquivo.txt", "r+");
