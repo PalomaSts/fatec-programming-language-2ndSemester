@@ -1,2 +1,2 @@
 # fatec-programming-language-2thS.
-Final work on the subject Programming Language
+Final work on the Programming Language subject.
